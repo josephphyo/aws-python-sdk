@@ -121,6 +121,3 @@ print(
 print(
     f"Public Subnet 2 ID = {pub_subnet_2['Subnet']['SubnetId']} and CIDR {pub_subnet_2['Subnet']['CidrBlock']}"
 )
-
-
-# --- Create
