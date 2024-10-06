@@ -1,13 +1,3 @@
-"""
-This script simulates the retrieval of the operational status of various AWS services.
-
-It demonstrates the use of Python exception handling to gracefully handle potential errors
-without crashing the script.
-
-Handles the KeyError: This exception is raised when a key is not found in a dictionary.
-"""
-
-
 def no_service_in_dict(service):
     print(f"There is no service {service} in the dictionary")
 
