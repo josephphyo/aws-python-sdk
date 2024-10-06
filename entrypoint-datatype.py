@@ -1,4 +1,6 @@
 def data_type():
+    """entrypoint and fstrings"""
+
     instance_type = "t2.micro"
     message = "My Instance are of type: "
 
