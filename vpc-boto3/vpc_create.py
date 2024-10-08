@@ -90,9 +90,7 @@ else:
     # --- Attach IGW to VPC
 
     ec2.attach_internet_gateway(VpcId=vpc_id, InternetGatewayId=ig_id)
-    print(
-        f"VPC '{ig_name} with ID '{ig_id}' has been created and attached to '{vpc_id}'"
-    )
+    print(f"VPC '{ig_name} with ID '{ig_id}' has been created and attached to '{vpc_id}'")
 
 # --- Create Route and Route Table
 # --- https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/create_route_table.html
@@ -115,9 +113,5 @@ pub_subnet_1 = ec2.create_subnet(
 pub_subnet_2 = ec2.create_subnet(
     AvailabilityZone="us-east-1b", CidrBlock="192.168.2.0/24", VpcId=vpc_id
 )
-print(
-    f"Public Subnet 1 ID = {pub_subnet_1['Subnet']['SubnetId']} and CIDR {pub_subnet_1['Subnet']['CidrBlock']}"
-)
-print(
-    f"Public Subnet 2 ID = {pub_subnet_2['Subnet']['SubnetId']} and CIDR {pub_subnet_2['Subnet']['CidrBlock']}"
-)
+print(f"Public Subnet 1 ID = {pub_subnet_1['Subnet']['SubnetId']} and CIDR {pub_subnet_1['Subnet']['CidrBlock']}")
+print(f"Public Subnet 2 ID = {pub_subnet_2['Subnet']['SubnetId']} and CIDR {pub_subnet_2['Subnet']['CidrBlock']}")

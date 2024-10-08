@@ -17,9 +17,7 @@ for instance in all_instances:
         if tag["Key"] == "Name" and tag["Value"] == instance_name:
             instance_exist = True
             instance_id = instance.id
-            print(
-                f"An instance named '{instance_name}' with id '{instance_id}' already exists."
-            )
+            print(f"An instance named '{instance_name}' with id '{instance_id}' already exists.")
             break
     if instance_exist:
         break
