@@ -43,3 +43,26 @@ except rds.exceptions.DBClusterNotFoundFault:
 
         print("Waiting for the DB cluster to become available....")
         time.sleep(40)
+
+# --- modified the DB cluster.
+# --- https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds/client/modify_db_cluster.html
+
+response = rds.modify_db_cluster(
+        DBClusterIdentifier=db_cluster_id,
+
+        ScalingConfiguration={
+            'MinCapacity': 1,
+            'MaxCapacity': 16,
+            'AutoPause': True,
+            'SecondsUntilAutoPause': 900  # Pause after 15 minutes IDLE. (Cost Saving)
+        }
+    )
+print(f"The DB Cluster '{db_cluster_id}' Updated")
+
+# --- Delete the DB cluster.
+
+response = rds.delete_db_cluster(
+        DBClusterIdentifier=db_cluster_id,
+        SkipFinalSnapshot=True
+)
+print(f"The DB Cluster '{db_cluster_id}' Deleted")
