@@ -7,9 +7,7 @@ def data_type():
     number_of_instance = 5
     hours_running = 10
 
-    print(
-        f"{message} {instance_type}. I have {number_of_instance} of them and they have been running {hours_running} hours."
-    )
+    print(f"{message} {instance_type}. I have {number_of_instance} of them and they have been running {hours_running} hours.")
 
     instance_running = True
     print(f"My instance are running {instance_running}?")
